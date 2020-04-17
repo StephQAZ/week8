@@ -22,12 +22,8 @@ int main()
 	for (int i = 0; i < contours.size(); i++) {
 		RotatedRect rbox = minAreaRect(contours[i]);
 		if(fabs(rbox.size.width*1.0/rbox.size.height-1)<0.1 && rbox.size.width>10)
-			drawContours(srcMat, contours, i, Scalar(0, 255, 255), 1, 8);
+			drawContours(srcMat, contours, i, Scalar(0, 255, 255), -1, 8);
 	}
-	//Point2f vtx[4];
-	//for (int i = 0; i < 4; ++i) {
-	//	cv::line(srcMat, vtx[i], vtx[i < 3 ? i + 1 : 0], Scalar(0, 0, 255), 2, CV_AA);
-	//}
 	
 	imshow("rim", srcMat);
 	waitKey(0);
