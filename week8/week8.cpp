@@ -27,7 +27,6 @@ int main()
 	findContours(binMat, contours, CV_RETR_TREE, CV_CHAIN_APPROX_NONE);
 
 	//绘制轮廓
-	cout << contours.size() << endl;
 	for (int i = 0; i < contours.size(); i++) {
 		RotatedRect rbox = minAreaRect(contours[i]);
 		cout << rbox.size << endl;
